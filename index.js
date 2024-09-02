@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 
-// const connectDB = require('./config/db');
+const connectDB = require('./config/db');
 
 const app = express();
 
@@ -16,7 +16,8 @@ app.use(express.urlencoded({ extended:true }));
 // const routes = require('./routes');
 // app.use(process.env.URL_BASE + "/", routes);
 
-// connectDB();
+// conexión a la base de datos
+connectDB();
 
 // servidor
 app.listen(process.env.PORT || 3000, () => {

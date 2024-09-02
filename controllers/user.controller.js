@@ -1,7 +1,7 @@
 const User = require('../models/user');
 const bcryptjs = require('bcryptjs');
 
-const findAll = async (req, res) => {
+const readall = async (req, res) => {
     try {
         const users = await User.find({});
         res.json({ users });
@@ -11,7 +11,7 @@ const findAll = async (req, res) => {
     }
 };
 
-const findOne = async (req, res) => {
+const readone = async (req, res) => {
     try {
     const user = await User.findById(req.params.id);
     res.json({ user });
@@ -61,4 +61,4 @@ const create = async (req, res) => {
     }
   };
 
-module.exports = { findAll, findOne, create, update, remove };
+module.exports = { readall, readone, create, update, remove };

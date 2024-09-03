@@ -20,6 +20,10 @@ app.use(process.env.URL_BASE + "/", routes);
 // conexión a la base de datos
 connectDB();
 
+// configuración de Swagger
+const swaggerSetup = require('./swagger');
+swaggerSetup(app);
+
 // servidor
 app.listen(process.env.PORT || 3000, () => {
     console.log(`listen in port ${process.env.PORT}`);

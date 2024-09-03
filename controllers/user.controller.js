@@ -1,7 +1,7 @@
 const User = require('../models/user');
 const bcryptjs = require('bcryptjs');
 
-const readall = async (req, res) => {
+const readAll = async (req, res) => {
     try {
         const users = await User.find({});
         res.json({ users });
@@ -11,7 +11,7 @@ const readall = async (req, res) => {
     }
 };
 
-const readone = async (req, res) => {
+const readOne = async (req, res) => {
     try {
     const user = await User.findById(req.params.id);
     res.json({ user });
@@ -61,7 +61,7 @@ const create = async (req, res) => {
     }
   };
 
-  const verifytoken = async (req, res) => {
+  const verifyToken = async (req, res) => {
     try {
       // retorna los datos excluyendo el password
       usuarioVerificado = await User.findById(req.user.id).select('-password');
@@ -72,4 +72,4 @@ const create = async (req, res) => {
     }
   };
 
-module.exports = { readall, readone, create, update, remove, verifytoken };
+module.exports = { readAll, readOne, create, update, remove, verifyToken };

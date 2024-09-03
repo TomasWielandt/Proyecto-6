@@ -1,7 +1,7 @@
 const Product = require('../models/product');
 const bcryptjs = require('bcryptjs');
 
-const readall = async (req, res) => {
+const readAll = async (req, res) => {
     try {
         const products = await Product.find({});
         res.json({ products });
@@ -11,7 +11,7 @@ const readall = async (req, res) => {
     }
 };
 
-const readone = async (req, res) => {
+const readOne = async (req, res) => {
     try {
     const product = await Product.findById(req.params.id);
     res.json({ product });
@@ -55,4 +55,4 @@ const create = async (req, res) => {
     }
   };
 
-module.exports = { readall, readone, create, update, remove };
+module.exports = { readAll, readOne, create, update, remove };

@@ -59,6 +59,43 @@ const { readAll, readOne, create, update, remove } = require('../controllers/pro
  *         description: Error creando un producto
  */
 router.post("/create", auth, create);
+
+/**
+ * @swagger
+ * /api/product/readall:
+ *   get:
+ *     summary: Obtener productos
+ *     description: Obtener todos los productos de la base de datos.
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Productos obtenidos exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: string
+ *                     example: 66d746c5e11b520166de301k
+ *                   name:
+ *                     type: string
+ *                     example: Iphone12
+ *                   description:
+ *                     type: string
+ *                     example: Celular
+ *                   price:
+ *                     type: number
+ *                     example: 100000
+ *                   stock:
+ *                     type: number
+ *                     example: 10
+ *       500:
+ *         description: Error obteniendo los productos
+ */
 router.get("/readall", auth, readAll);
 router.get("/readone/:id", auth, readOne);
 router.put("/update/:id", auth, update);

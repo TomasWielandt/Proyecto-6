@@ -199,7 +199,7 @@ router.put("/update/:id", auth, update);
 
 /**
  * @swagger
- * /api/user/remove/{id}:
+ * /api/user/delete/{id}:
  *   delete:
  *     summary: Eliminar un usuario
  *     description: Elimina un usuario de la base de datos.
@@ -238,7 +238,7 @@ router.put("/update/:id", auth, update);
  *       500:
  *         description: Error borrando un usuario
  */
-router.delete("/remove/:id", auth, remove);
+router.delete("/delete/:id", auth, remove);
 router.get("/verifytoken", auth, verifyToken);
 
 module.exports = router;

@@ -9,6 +9,6 @@ router.get("/readall", auth, readAll);
 router.get("/readone/:id", auth, readOne);
 router.post("/create", auth, create);
 router.put("/update/:id", auth, update);
-router.delete("/remove/:id", auth, remove);
+router.delete("/delete/:id", auth, remove);
 
 module.exports = router;

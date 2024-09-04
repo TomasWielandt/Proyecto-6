@@ -202,6 +202,48 @@ router.get("/readone/:id", auth, readOne);
  *         description: Error actualizando un producto
  */
 router.put("/update/:id", auth, update);
+
+/**
+ * @swagger
+ * /api/product/delete/{id}:
+ *   delete:
+ *     summary: Eliminar un producto
+ *     description: Elimina un producto de la base de datos.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID del producto.
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Producto borrado exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: string
+ *                   example: 66d746c5e11b520166de301k
+ *                 name:
+ *                   type: string
+ *                   example: Iphone12
+ *                 description:
+ *                   type: string
+ *                   example: Celular
+ *                 price:
+ *                   type: number
+ *                   example: 100000
+ *                 stock:
+ *                   type: number
+ *                   example: 10
+ *       500:
+ *         description: Error borrando un producto
+ */
 router.delete("/delete/:id", auth, remove);
 
 module.exports = router;

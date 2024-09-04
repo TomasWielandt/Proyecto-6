@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const { register, logIn } = require('../controllers/auth.controller');
+const auth = require('../middleware/authorization');
+
+const { register, logIn, verifyToken } = require('../controllers/auth.controller');
 
 /**
  * @swagger
@@ -94,5 +96,42 @@ router.post("/register", register);
  *         description: Error al iniciar sesión del usuario
  */
 router.post("/login", logIn);
+
+/**
+ * @swagger
+ * /api/user/verifytoken:
+ *   get:
+ *     tags:
+ *       - Auth
+ *     summary: Verificar token
+ *     description: Verificar el token del usuario.
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Token verificado exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: string
+ *                     example: 66d746c5e11b520166de301k
+ *                   name:
+ *                     type: string
+ *                     example: Juan
+ *                   username:
+ *                     type: string
+ *                     example: juan@gmail.com
+ *                   active:
+ *                     type: boolean
+ *                     example: true
+ *       500:
+ *         description: Error verificando el token
+ */
+router.get("/verifytoken", auth, verifyToken);
 
 module.exports = router;

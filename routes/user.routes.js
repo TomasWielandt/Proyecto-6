@@ -3,44 +3,7 @@ const router = express.Router();
 
 const auth = require('../middleware/authorization');
 
-const { readAll, readOne, create, update, remove, verifyToken } = require('../controllers/user.controller');
-
-/**
- * @swagger
- * /api/user/verifytoken:
- *   get:
- *     tags:
- *       - User
- *     summary: Verificar token
- *     description: Verificar el token del usuario.
- *     security:
- *       - bearerAuth: []
- *     responses:
- *       200:
- *         description: Token verificado exitosamente
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 type: object
- *                 properties:
- *                   id:
- *                     type: string
- *                     example: 66d746c5e11b520166de301k
- *                   name:
- *                     type: string
- *                     example: Juan
- *                   username:
- *                     type: string
- *                     example: juan@gmail.com
- *                   active:
- *                     type: boolean
- *                     example: true
- *       500:
- *         description: Error verificando el token
- */
-router.get("/verifytoken", auth, verifyToken);
+const { readAll, readOne, create, update, remove } = require('../controllers/user.controller');
 
 /**
  * @swagger

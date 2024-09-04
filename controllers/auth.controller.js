@@ -56,4 +56,15 @@ const logIn = async (req, res) => {
     }
 };
 
-module.exports = { register, logIn };
+const verifyToken = async (req, res) => {
+    try {
+      // retorna los datos excluyendo el password
+      usuarioVerificado = await User.findById(req.user.id).select('-password');
+      res.json(usuarioVerificado);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'error verificando el token'});
+    }
+  };
+
+module.exports = { register, logIn, verifyToken };

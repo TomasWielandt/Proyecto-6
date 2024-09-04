@@ -79,6 +79,60 @@ router.get("/readall", auth, readAll);
  *         description: Error obteniendo al usuario
  */
 router.get("/readone/:id", auth, readOne);
+
+/**
+ * @swagger
+ * /api/user/create:
+ *   post:
+ *     summary: Registrar un nuevo usuario
+ *     description: Añade un nuevo usuario a la base de datos.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 example: Juan
+ *               username:
+ *                 type: string
+ *                 example: juan@gmail.com
+ *               password:
+ *                 type: string
+ *                 example: 1234
+ *               active:
+ *                 type: boolean
+ *                 example: true
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       201:
+ *         description: Usuario creado exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: string
+ *                   example: 66d746c5e11b520166de301k
+ *                 name:
+ *                   type: string
+ *                   example: Juan
+ *                 username:
+ *                   type: string
+ *                   example: juan@gmail.com
+ *                 password:
+ *                   type: string
+ *                   example: 1234
+ *                 active:
+ *                   type: boolean
+ *                   example: true
+ *       500:
+ *         description: Error creando un usuario
+ */
 router.post("/create", auth, create);
 router.put("/update/:id", auth, update);
 router.delete("/remove/:id", auth, remove);

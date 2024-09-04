@@ -9,6 +9,8 @@ const { readAll, readOne, create, update, remove } = require('../controllers/pro
  * @swagger
  * /api/product/create:
  *   post:
+ *     tags:
+ *       - Product
  *     summary: Crear un nuevo producto
  *     description: Añade un nuevo producto a la base de datos.
  *     requestBody:
@@ -64,6 +66,8 @@ router.post("/create", auth, create);
  * @swagger
  * /api/product/readall:
  *   get:
+ *     tags:
+ *       - Product
  *     summary: Obtener productos
  *     description: Obtener todos los productos de la base de datos.
  *     security:
@@ -102,6 +106,8 @@ router.get("/readall", auth, readAll);
  * @swagger
  * /api/product/readone/{id}:
  *   get:
+ *     tags:
+ *       - Product
  *     summary: Obtener producto
  *     description: Obtener un producto según su ID
  *     parameters:
@@ -145,6 +151,8 @@ router.get("/readone/:id", auth, readOne);
  * @swagger
  * /api/product/update/{id}:
  *   put:
+ *     tags:
+ *       - Product
  *     summary: Actualizar un producto
  *     description: Actualiza las propiedades del producto.
  *     parameters:
@@ -207,6 +215,8 @@ router.put("/update/:id", auth, update);
  * @swagger
  * /api/product/delete/{id}:
  *   delete:
+ *     tags:
+ *       - Product
  *     summary: Eliminar un producto
  *     description: Elimina un producto de la base de datos.
  *     parameters:

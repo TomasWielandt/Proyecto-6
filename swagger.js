@@ -8,6 +8,20 @@ swaggerDefinition = {
         version: '1.0.0',
         description: 'Documentación de la API del proyecto 6',
     },
+    tags: [
+    {
+      "name": "Auth",
+      "description": "Autenticación y autorización"
+    },
+    {
+      "name": "User",
+      "description": "Operaciones usuarios"
+    },
+    {
+      "name": "Product",
+      "description": "Operaciones productos"
+    }
+  ],
     components: {
       securitySchemes: {
         bearerAuth: {

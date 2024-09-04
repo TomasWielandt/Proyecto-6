@@ -7,6 +7,8 @@ const { register, logIn } = require('../controllers/auth.controller');
  * @swagger
  * /api/user/register:
  *   post:
+ *     tags:
+ *       - Auth
  *     summary: Registrar un nuevo usuario
  *     description: Añade un nuevo usuario a la base de datos.
  *     requestBody:
@@ -60,6 +62,8 @@ router.post("/register", register);
  * @swagger
  * /api/user/login:
  *   post:
+ *     tags:
+ *       - Auth
  *     summary: Iniciar sesión
  *     description: Autenticar y autorizar ingreso a la sesión del usuario.
  *     requestBody:

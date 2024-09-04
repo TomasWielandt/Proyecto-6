@@ -9,6 +9,8 @@ const { readAll, readOne, create, update, remove, verifyToken } = require('../co
  * @swagger
  * /api/user/verifytoken:
  *   get:
+ *     tags:
+ *       - User
  *     summary: Verificar token
  *     description: Verificar el token del usuario.
  *     security:
@@ -44,6 +46,8 @@ router.get("/verifytoken", auth, verifyToken);
  * @swagger
  * /api/user/create:
  *   post:
+ *     tags:
+ *       - User
  *     summary: Registrar un nuevo usuario
  *     description: Añade un nuevo usuario a la base de datos.
  *     requestBody:
@@ -99,6 +103,8 @@ router.post("/create", auth, create);
  * @swagger
  * /api/user/readall:
  *   get:
+ *     tags:
+ *       - User
  *     summary: Obtener usuarios
  *     description: Obtener todos los usuarios de la base de datos.
  *     security:
@@ -137,6 +143,8 @@ router.get("/readall", auth, readAll);
  * @swagger
  * /api/user/readone/{id}:
  *   get:
+ *     tags:
+ *       - User
  *     summary: Obtener usuario
  *     description: Obtener un usuario según su ID
  *     parameters:
@@ -180,6 +188,8 @@ router.get("/readone/:id", auth, readOne);
  * @swagger
  * /api/user/update/{id}:
  *   put:
+ *     tags:
+ *       - User
  *     summary: Actualizar un usuario
  *     description: Actualiza las propiedades del usuario.
  *     parameters:
@@ -242,6 +252,8 @@ router.put("/update/:id", auth, update);
  * @swagger
  * /api/user/delete/{id}:
  *   delete:
+ *     tags:
+ *       - User
  *     summary: Eliminar un usuario
  *     description: Elimina un usuario de la base de datos.
  *     parameters:

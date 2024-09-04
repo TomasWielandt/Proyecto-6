@@ -32,6 +32,9 @@ const { readAll, readOne, create, update, remove, verifyToken } = require('../co
  *                   username:
  *                     type: string
  *                     example: juan@gmail.com
+ *                   password:
+ *                     type: string
+ *                     example: 1234
  *                   active:
  *                     type: boolean
  *                     example: true
@@ -72,6 +75,9 @@ router.get("/readall", auth, readAll);
  *                   username:
  *                     type: string
  *                     example: juan@gmail.com
+ *                   password:
+ *                     type: string
+ *                     example: 1234
  *                   active:
  *                     type: boolean
  *                     example: true
@@ -239,6 +245,40 @@ router.put("/update/:id", auth, update);
  *         description: Error borrando un usuario
  */
 router.delete("/delete/:id", auth, remove);
+
+/**
+ * @swagger
+ * /api/user/verifytoken:
+ *   get:
+ *     summary: Verificar token
+ *     description: Verificar el token del usuario.
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Token verificado exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: string
+ *                     example: 66d746c5e11b520166de301k
+ *                   name:
+ *                     type: string
+ *                     example: Juan
+ *                   username:
+ *                     type: string
+ *                     example: juan@gmail.com
+ *                   active:
+ *                     type: boolean
+ *                     example: true
+ *       500:
+ *         description: Error verificando el token
+ */
 router.get("/verifytoken", auth, verifyToken);
 
 module.exports = router;

@@ -108,7 +108,7 @@ router.get("/readone/:id", auth, readOne);
  *     security:
  *       - bearerAuth: []
  *     responses:
- *       201:
+ *       200:
  *         description: Usuario creado exitosamente
  *         content:
  *           application/json:
@@ -196,6 +196,48 @@ router.post("/create", auth, create);
  *         description: Error actualizando un usuario
  */
 router.put("/update/:id", auth, update);
+
+/**
+ * @swagger
+ * /api/user/remove/{id}:
+ *   delete:
+ *     summary: Eliminar un usuario
+ *     description: Elimina un usuario de la base de datos.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID del usuario.
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Usuario borrado exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: string
+ *                   example: 66d746c5e11b520166de301k
+ *                 name:
+ *                   type: string
+ *                   example: Juan
+ *                 username:
+ *                   type: string
+ *                   example: juan@gmail.com
+ *                 password:
+ *                   type: string
+ *                   example: 1234
+ *                 active:
+ *                   type: boolean
+ *                   example: true
+ *       500:
+ *         description: Error borrando un usuario
+ */
 router.delete("/remove/:id", auth, remove);
 router.get("/verifytoken", auth, verifyToken);
 

@@ -140,6 +140,67 @@ router.get("/readall", auth, readAll);
  *         description: Error obteniendo el producto
  */
 router.get("/readone/:id", auth, readOne);
+
+/**
+ * @swagger
+ * /api/product/update/{id}:
+ *   put:
+ *     summary: Actualizar un producto
+ *     description: Actualiza las propiedades del producto.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID del producto.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 example: Iphone12
+ *               description:
+ *                 type: string
+ *                 example: Celular
+ *               price:
+ *                 type: number
+ *                 example: 100000
+ *               stock:
+ *                 type: number
+ *                 example: 10
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Producto actualizado exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: string
+ *                   example: 66d746c5e11b520166de301k
+ *                 name:
+ *                   type: string
+ *                   example: Iphone12
+ *                 description:
+ *                   type: string
+ *                   example: Celular
+ *                 price:
+ *                   type: number
+ *                   example: 100000
+ *                 stock:
+ *                   type: number
+ *                   example: 10
+ *       500:
+ *         description: Error actualizando un producto
+ */
 router.put("/update/:id", auth, update);
 router.delete("/delete/:id", auth, remove);
 

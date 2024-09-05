@@ -27,4 +27,5 @@ swaggerSetup(app);
 // servidor
 app.listen(process.env.PORT || 3000, () => {
     console.log(`listen in port ${process.env.PORT}`);
+    console.log(`Documentacion en http://localhost:${process.env.PORT}/api-docs`);
 });

@@ -38,8 +38,8 @@ swaggerDefinition = {
     ],
     servers: [
         {
-            url: 'http://localhost:3000',
-            description: 'Servidor local',
+            url: 'https://proyecto-6-x1zq.onrender.com',
+            description: 'Servidor Render',
         },
     ],
 };

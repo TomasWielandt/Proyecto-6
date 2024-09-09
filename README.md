@@ -8,7 +8,7 @@
 3. [Requisitos](#3-requisitos)
 4. [Instalación y configuración](#4-instalación-y-configuración)
 5. [Implementación de la solución con Swagger](#5-implementación-de-la-solución-con-swagger)
-6. [Contacto](#7-contacto)
+6. [Contacto](#6-contacto)
 
 ------------
 

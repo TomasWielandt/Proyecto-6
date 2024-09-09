@@ -1,4 +1,4 @@
-(https://github.com/UDDBootcamp/7M_FULLSTACK_M6_PROY/blob/master/images/banner.png)
+![](https://github.com/UDDBootcamp/7M_FULLSTACK_M6_PROY/blob/master/images/banner.png)
 
 # Proyecto 5: Aplicación Backend con Autenticación
 

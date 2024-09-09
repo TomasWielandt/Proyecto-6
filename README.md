@@ -3,6 +3,14 @@
 # Proyecto 5: Aplicación Backend con Autenticación
 
 ## Índice
+1. [¿Qué construirás?](#1-qué-construirás)
+2. [Objetivos](#2-objetivos)
+3. [Requisitos](#3-requisitos)
+4. [Instalación y configuración](#4-instalación-y-configuración)
+5. [Implementación de la solución con Swagger](#5-implementación-de-la-solución-con-swagger)
+6. [Contacto](#7-contacto)
+
+------------
 
 ## 1. ¿Qué construirás?
 Construirás una aplicación backend que maneja la autenticación y autorización de usuarios. La aplicación debe incluir un modelo de usuario y un modelo de Producto que puede ser cualquier elemento que desees enlazar con el usuario.
